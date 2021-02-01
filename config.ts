@@ -1,18 +1,17 @@
 const siteMetadata = {
-    title: `Elemental`,
-    siteUrl: `http://localhost`,
+    title: `Keyframe Development`,
+    siteUrl: `http://keyframedev.com`,
     capitalizeTitleOnHome: false,
     logo: `/images/logo.png`,
-    icon: `/images/icon.png`,
-    titleImage: `/images/wall.png`,
-    ogImage: `/images/wall.png`,
+    icon: `/images/logo.png`,
+    titleImage: `/images/conifer-18.png`,
+    ogImage: `/images/cconifer-18.png`,
     twoColumnWall: true,
     cookiePolicy: true,
-    introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-    about:
-        "Cras accumsan a lectus at tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elementum dapibus dictum. Mauris auctor quam nec est tincidunt hendrerit. Donec pulvinar lobortis mauris. Cras vulputate ullamcorper ligula a rhoncus. Nunc venenatis elementum ligula in semper. Mauris malesuada purus nunc, et ultricies leo aliquam ac. Ut sit amet nunc id magna accumsan hendrerit in eget metus.",
-    author: `@_akzhy`,
+    introTag: `Smoothly transitioning digital projects from idea to reality.`,
+    description: ` At Keyframe Studio, we'll work with you to deliver digital projects that are fast, responsive, and cost-effective. Our expertise includes Web and Mobile Development, Fullstack, Wordpress and more`,
+    about: "We are a software development studio located in Austin, TX.  Our mission for any project we work on is to deliver industry-leading results at budget-friendly costs and time.  We are trained in many of the tools and resources that are out there to help build digital products more efficiently.  Utilizing this expertise we can help businesses succeed the digital space and offer many different web services to assist our clients in acheiving their goals.",
+    author: `@kyleknick`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
     darkmode: true,
@@ -27,14 +26,6 @@ const siteMetadata = {
             url: "/about",
         },
         {
-            name: "BLOG",
-            url: "/blog",
-        },
-        {
-            name: "PORTFOLIO",
-            url: "/portfolio",
-        },
-        {
             name: "CONTACT",
             url: "/contact",
         },
@@ -46,38 +37,16 @@ const siteMetadata = {
         },
         {
             name: "GitHub",
-            url: "https://github.com/akzhy/gatsby-starter-elemental",
-        },
-    ],
-    social: [
-        {
-            name: "Facebook",
-            icon: "/images/Facebook.svg",
-            url: "#",
-        },
-        {
-            name: "Twitter",
-            icon: "/images/Twitter.svg",
-            url: "#",
-        },
-        {
-            name: "Instagram",
-            icon: "/images/Instagram.svg",
-            url: "#",
-        },
-        {
-            name: "Youtube",
-            icon: "/images/Youtube.svg",
-            url: "#",
+            url: "https://github.com/kyleknick/keyframedev",
         },
     ],
     contact: {
         // leave empty ('') or false to hide form
-        api_url: "https://getform.io/f/f227a36e-096a-4c6a-9963-9f1918a85bb3",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-        mail: "hi@akzhy.com",
-        phone: "000-000-0000",
-        address: "1234 \nLocation \nLocation",
+        api_url: "https://getform.io/f/b30169dd-0e15-4500-8090-e5478106253a",
+        description: `Have an idea that you need help getting started? Please reach out to us today and we'll get back to you to discuss your project promptly.`,
+        mail: "contact@keyframedev.com",
+        phone: "512-298-9356",
+        address: "Austin, Texas",
     },
     disqus: "elemental-netlify-com",
 }

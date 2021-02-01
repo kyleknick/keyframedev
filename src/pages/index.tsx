@@ -15,17 +15,17 @@ import { IndexPageQuery } from "./__generated__/IndexPageQuery"
 export default ({ data, location }: PageProps<IndexPageQuery>) => {
     const siteData = data.site.siteMetadata
 
-    const portfolioList = data.portfolio.edges.map((item, _) => (
-        <ItemPortfolio
-            data={item.node}
-            key={`p-item-index-${item.node.id}`}
-            even={(_ + 1) % 2 === 0}
-        />
-    ))
+    // const portfolioList = data.portfolio.edges.map((item, _) => (
+    //     <ItemPortfolio
+    //         data={item.node}
+    //         key={`p-item-index-${item.node.id}`}
+    //         even={(_ + 1) % 2 === 0}
+    //     />
+    // ))
 
-    const blogList = data.blog.edges.map(item => (
-        <ItemBlog data={item.node} key={`b-item-index-${item.node.id}`} />
-    ))
+    // const blogList = data.blog.edges.map(item => (
+    //     <ItemBlog data={item.node} key={`b-item-index-${item.node.id}`} />
+    // ))
 
     return (
         <Layout
@@ -39,11 +39,13 @@ export default ({ data, location }: PageProps<IndexPageQuery>) => {
         >
             <Wall data={siteData} />
             {siteData.about !== "" && <About data={siteData.about} />}
-            <div className="px-4 lg:px-0" id="portfolio">
+            {/* <div className="px-4 lg:px-0" id="portfolio">
                 {portfolioList}
+            </div> */}
+            {/* <Blog>{blogList}</Blog> */}
+            <div id="contact">
+                <Contact data={siteData.contact}  />
             </div>
-            <Blog>{blogList}</Blog>
-            <Contact data={siteData.contact} />
         </Layout>
     )
 }
@@ -95,9 +97,9 @@ const Wall = ({ data }) => {
                 {data.introTag}
             </p>
             <p className="text-base lg:text-lg mt-4">{data.description}</p>
-            <ScrollIntoView selector="#portfolio">
+            <ScrollIntoView selector="#contact">
                 <Button
-                    title="SEE WORKS"
+                    title="CONTACT TODAY"
                     type="button"
                     iconRight={<ArrowRight />}
                 />
@@ -111,9 +113,9 @@ const Wall = ({ data }) => {
                 className="wall h-screen flex relative justify-center items-center overflow-hidden"
                 ref={wall}
             >
-                <div className="flex-1 lg:block absolute lg:relative w-full h-full top-0 left-0">
+                <div className="flex-1 lg:block absolute lg:relative w-full h-full top-2 left-0">
                     <div
-                        className="absolute left-0 top-0 w-full h-full lg:hidden"
+                        className="absolute left-0 top-2 w-full h-full lg:hidden"
                         style={{
                             background: "rgba(0,0,0,.75)",
                         }}
@@ -154,18 +156,18 @@ const About = ({ data }) => {
     )
 }
 
-const Blog = ({ children }) => {
-    return (
-        <div className="container mx-auto px-0">
-            <div className="pt-20 pb-10 text-center lg:pt-40 lg:pb-20">
-                <h2 className="text-color-1 font-black text-5xl lg:text-6xl">
-                    Blog
-                </h2>
-            </div>
-            <div className="flex flex-wrap">{children}</div>
-        </div>
-    )
-}
+// const Blog = ({ children }) => {
+//     return (
+//         // <div className="container mx-auto px-0">
+//         //     <div className="pt-20 pb-10 text-center lg:pt-40 lg:pb-20">
+//         //         <h2 className="text-color-1 font-black text-5xl lg:text-6xl">
+//         //             Blog
+//         //         </h2>
+//         //     </div>
+//         //     <div className="flex flex-wrap">{children}</div>
+//         // </div>
+//     )
+// }
 
 const Contact = ({ data }) => {
     const hasContactForm = data.api_url
@@ -214,61 +216,7 @@ export const query = graphql`
                     phone
                     address
                 }
-                social {
-                    name
-                    url
-                    icon
-                }
             }
-        }
-        portfolio: allMdx(
-            filter: { fields: { sourceName: { eq: "portfolio" } } }
-            limit: 6
-        ) {
-            edges {
-                node {
-                    id
-                    frontmatter {
-                        title
-                        description
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    fields {
-                        slug
-                    }
-                }
-            }
-        }
-        blog: allMdx(
-            filter: { fields: { sourceName: { eq: "blog" } } }
-            limit: 6
-        ) {
-            edges {
-                node {
-                    id
-                    frontmatter {
-                        title
-                        description
-                        date(formatString: "DD MMMM YYYY")
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    fields {
-                        slug
-                    }
-                }
-            }
-        }
+        }        
     }
 `

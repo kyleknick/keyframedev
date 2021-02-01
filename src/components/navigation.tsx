@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { WindowLocation } from '@reach/router';
 
-import { Logo } from "./utils"
 import List from "./navigation-list"
 import { Menu } from "react-feather"
 import SideBar from "./sidebar"
@@ -70,26 +69,17 @@ const Navbar: React.FC<NavbarProps> = ({ navPlaceholder, location, currentTheme,
                 </button>
                 <SideBar open={sidebarOpen} onChange={setSidebarOpen}>
                     <div className="bg-bg h-full flex flex-col justify-center relative">
-                        <div className="absolute top-0 my-4 text-center w-full">
-                            <Link to="/" title={data.site.siteMetadata.title} className="inline-block">
-                                <Logo
-                                    className={`duration-300 transition-all ${
-                                        scrolled ? "w-6" : "w-8"
-                                    }`}
-                                />
-                            </Link>
-                        </div>
                         <div className="text-center">
                             <List name="sidebar-nav" current={currentLocation}  currentTheme={currentTheme} switchTheme={switchTheme} themes={themes} withThemeSwitch={allowThemeSwitch} liClassName="block my-2"/>
                         </div>
                     </div>
                 </SideBar>
                 <Link to="/" title={data.site.siteMetadata.title}>
-                    <Logo
+                    {/* <Logo
                         className={`duration-300 transition-all ${
                             scrolled ? "w-6" : "w-8"
                         }`}
-                    />
+                    /> */}
                 </Link>
                 <div className="hidden lg:block">
                     <List name="navbar" className="nav-links flex" current={currentLocation} currentTheme={currentTheme} switchTheme={switchTheme} themes={themes} withThemeSwitch={allowThemeSwitch}/>
